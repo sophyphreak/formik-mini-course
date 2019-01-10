@@ -1,5 +1,5 @@
 import React from 'react'
-import { withFormik, Form, Field } from 'formik'
+import { withFormik,  ErrorMessage, Form, Field } from 'formik'
 import * as Yup from 'yup'
 
 const App = ({
@@ -10,7 +10,8 @@ const App = ({
 }) => (
   <Form>
     <div>
-      { touched.email && errors.email && <p>{errors.email}</p> }
+      {/* touched.email && errors.email && <p>{errors.email}</p> */}
+      <ErrorMessage name="email" component="p" />
       <Field type="email" name="email" placeholder="Email"></Field>
     </div>
     <div>
